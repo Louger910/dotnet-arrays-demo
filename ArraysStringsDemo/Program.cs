@@ -10,35 +10,30 @@ namespace ArraysStringsDemo
     {
         static void Main(string[] args)
         {
-            Object o = new Object();
+            int[] intArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int[] intArray2 = intArray;
+            int[] intArray3 = intArray;
 
-            Object o2 = null;
-            Object o3;
+            int[,] tDArray = new int[10, 10];
 
-            String s = "Hello";
-            string s2 = "Hello";
-            int[] intArray = { 1, 2, 3 };
-            int[] intArray2 = new int[3];
-
-            int[][] tDArray = new int[2][];
-
-
-            tDArray[0] = intArray;
-            tDArray[1] = intArray2;
-
-            foreach (var item in tDArray)
+            for (int i = 1; i <= 9; i++)
             {
-                //Console.WriteLine(item);
-                foreach (var item2 in item)
+                for (int j = 1; j <= 9; j++)
                 {
-                    Console.Write(item2 + " ");
+                    tDArray[i, j] = i * j;
                 }
-                Console.WriteLine();
+              
             }
 
-
-
-            // String s1 = new String("Hello");
+            for (int i = 1; i <= 9; i++)
+            {
+                for (int j = 1; j <= 9; j++)
+                {
+                    Console.Write("{0}\t", tDArray[i, j]);
+                }
+                Console.WriteLine("");
+                Console.WriteLine("");
+            }
         }
     }
 }
